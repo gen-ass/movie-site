@@ -193,7 +193,14 @@ movie_tile_content = '''
 
 
 def create_movie_tiles_content(movies):
-    # The HTML content for this section of the page
+    ''' 
+    Behaviour: The information from the media file is rendered here that was in return received from the entertainment_centre file and 
+    populates the HTML structure of the page dynamically.
+    Input: Class variables is passed into function. The YouTube URL variable is read with the help of the python regular 
+    expression operation. Because the string is read raw python must be given the means to understand without mangling it.
+    Output: Content is then added together or appended so it can be returned to the values inside the HTML structure. It is returned not
+    printed so the function ends after the return.
+    '''
     content = ''
     for movie in movies:
         # Extract the youtube ID from the url
@@ -239,6 +246,13 @@ def create_movie_tiles_content(movies):
 
 
 def open_movies_page(movies):
+    '''
+    Behaviour: The output file that the browser can understand is written below and opened in the browser with the variables 
+    received from the media file.
+    Input: Appended content from function create_movie_tiles_content is now writ to the HTML structure. Content for the movie_tiles 
+    place holder in the HTML file are also created.
+    Output: AL the date is now passed to be displayed in the browser and the program is now opened in the browser as well.
+    '''
     # Create or overwrite the output file
     output_file = open('fresh_tomatoes.html', 'w')
 
